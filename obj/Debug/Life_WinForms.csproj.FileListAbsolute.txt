@@ -1,0 +1,10 @@
+C:\Users\vlad9\source\repos\Life_WinForms\bin\Debug\Life_WinForms.exe.config
+C:\Users\vlad9\source\repos\Life_WinForms\bin\Debug\Life_WinForms.exe
+C:\Users\vlad9\source\repos\Life_WinForms\bin\Debug\Life_WinForms.pdb
+C:\Users\vlad9\source\repos\Life_WinForms\obj\Debug\Life_WinForms.csprojAssemblyReference.cache
+C:\Users\vlad9\source\repos\Life_WinForms\obj\Debug\Life_WinForms.Form1.resources
+C:\Users\vlad9\source\repos\Life_WinForms\obj\Debug\Life_WinForms.Properties.Resources.resources
+C:\Users\vlad9\source\repos\Life_WinForms\obj\Debug\Life_WinForms.csproj.GenerateResource.cache
+C:\Users\vlad9\source\repos\Life_WinForms\obj\Debug\Life_WinForms.csproj.CoreCompileInputs.cache
+C:\Users\vlad9\source\repos\Life_WinForms\obj\Debug\Life_WinForms.exe
+C:\Users\vlad9\source\repos\Life_WinForms\obj\Debug\Life_WinForms.pdb
