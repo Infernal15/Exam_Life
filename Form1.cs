@@ -18,11 +18,14 @@ namespace Life_WinForms
         private const int y = 30;
         private static double span = 0.5;
         private Thread temp;
+        private static Semaphore sem;
+        private static bool status;
         public Form1()
         {
             InitializeComponent();
             labe = new Label[x, y];
             Random rnd = new Random();
+            sem = new Semaphore(0, 1);
             for (int i = 0; i < x; i++)
             {
                 for (int j = 0; j < y; j++)
@@ -44,6 +47,7 @@ namespace Life_WinForms
                     Controls.Add(labe[i, j]);
                 }
             }
+            status = false;
             temp = new Thread(Life);
             temp.Start();
         }
@@ -52,6 +56,8 @@ namespace Life_WinForms
         {
             while (true)
             {
+                if (status == false)
+                    sem.WaitOne();
                 Death();
                 Birthday();
                 Thread.Sleep(Convert.ToInt32(1000 * span));
@@ -143,6 +149,39 @@ namespace Life_WinForms
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             temp.Abort();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Thread tem = new Thread(Plus_one);
+            tem.Start();
+        }
+
+        private static void Plus_one()
+        {
+            sem.Release();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = false;
+            button3.Enabled = true;
+            status = true;
+            Plus_one();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
+            button3.Enabled = false;
+            status = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Split('.').Length > 1)
+                textBox1.Text = textBox1.Text.Replace('.', ',');
+            span = Convert.ToDouble(textBox1.Text);
         }
     }
 }
